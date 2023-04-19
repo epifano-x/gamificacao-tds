@@ -1,0 +1,34 @@
+@page
+@model GerenRest.RazorPages.Pages.Mesa.Create
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1>Cadastrar nova Mesa</h1>
+
+@if (!string.IsNullOrEmpty(TempData["ErroMesa"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroMesa"]</div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <div class="form-group">
+                <label asp-for="MesaModel.Numero">Numero</label>
+                <input asp-for="MesaModel.Numero" class="form-control">
+                <span asp-validation-for="MesaModel.Numero" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Mesa/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

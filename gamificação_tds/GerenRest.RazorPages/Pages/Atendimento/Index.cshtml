@@ -1,0 +1,69 @@
+@page
+@model GerenRest.RazorPages.Pages.Atendimento.Index
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1 class="display-4">Registro de Atendimentos</h1>
+
+<hr/>
+    <td><a class="btn btn-success" asp-page="./Create">Registrar novo Atendimento</a></td>
+<hr/>
+
+
+@if (!string.IsNullOrEmpty(TempData["ErroGarcon"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroGarcon"]</div>
+}
+@if (!string.IsNullOrEmpty(TempData["ErroMesaRegistro"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroMesaRegistro"]</div>
+}
+@if (!string.IsNullOrEmpty(TempData["ErroProduto"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroProduto"]</div>
+}
+@if (!string.IsNullOrEmpty(TempData["ErroMesasOcupadas"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroMesasOcupadas"]</div>
+}
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>Número da Mesa</td>
+                <td>Garçom Responsável</td>
+                <td>Produtos Consumidos</td>
+                <td>Quantidade</td>
+                <td>Preço Total</td>
+                <td>Horário de Atendimento</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var atenModel in Model.AtenModel)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => atenModel.MesaAtendida!.Numero)</td>
+                    <td>@Html.DisplayFor(model => atenModel.GarconResponsavel!.Nome)</td>
+                    <td>
+                        <select>
+                            @foreach (var prodModel in atenModel.ListaProdutos!)
+                            {
+                                <option>@prodModel.Nome</option>
+                            }
+                        </select>
+                    </td>
+                    <td>@Html.DisplayFor(model => atenModel.quantidade)</td>
+                    <td>@Html.DisplayFor(model => atenModel.PrecoTotal)</td>
+                    <td>@Html.DisplayFor(model => atenModel.HorarioAtendimento)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./Details" asp-route-id="@atenModel.AtendimentoID">Visualizar</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@atenModel.AtendimentoID">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>

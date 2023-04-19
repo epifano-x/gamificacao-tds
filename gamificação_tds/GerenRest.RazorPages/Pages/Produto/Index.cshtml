@@ -1,0 +1,49 @@
+@page
+@model GerenRest.RazorPages.Pages.Produto.Index
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1 class="display-4">Produtos Registrados</h1>
+
+<hr/>
+    <td><a class="btn btn-success" asp-page="./Create">Registrar novo Produto</a></td>
+<hr/>
+
+@if (!string.IsNullOrEmpty(TempData["ErroCategoria"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroCategoria"]</div>
+}
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>Nome Produto</td>
+                <td>Descrição</td>
+                <td>Preço</td>
+                <td>Categoria</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prodModel in Model.ProdModel)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => prodModel.Nome)</td>
+                    <td>@Html.DisplayFor(model => prodModel.Descricao)</td>
+                    <td>@Html.DisplayFor(model => prodModel.Preco)</td>
+                    <td>@Html.DisplayFor(model => prodModel.Categoria!.Nome)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@prodModel.ProdutoID">Alterar</a>
+                        <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@prodModel.ProdutoID">Visualizar</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@prodModel.ProdutoID">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>

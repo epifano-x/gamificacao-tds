@@ -1,0 +1,48 @@
+@page
+@model GerenRest.RazorPages.Pages.Garcon.Create
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1>Cadastrar novo Garçon</h1>
+
+@if (!string.IsNullOrEmpty(TempData["ErroGarcon"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroGarcon"]</div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <div class="form-group">
+                <label asp-for="GarconModel.Nome">Nome</label>
+                <input asp-for="GarconModel.Nome" class="form-control">
+                <span asp-validation-for="GarconModel.Nome" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GarconModel.Sobrenome">Sobrenome</label>
+                <input asp-for="GarconModel.Sobrenome" class="form-control">
+                <span asp-validation-for="GarconModel.Sobrenome" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GarconModel.NumIdentificao">Numero Identificação</label>
+                <input asp-for="GarconModel.NumIdentificao" class="form-control">
+                <span asp-validation-for="GarconModel.NumIdentificao" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GarconModel.Telefone">Telefone para contato</label>
+                <input asp-for="GarconModel.Telefone" class="form-control" placeholder="(45)988123456">
+                <span asp-validation-for="GarconModel.Telefone" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Garcon/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

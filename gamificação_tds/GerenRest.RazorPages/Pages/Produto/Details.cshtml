@@ -1,0 +1,21 @@
+@page "{id:int}"
+@model GerenRest.RazorPages.Pages.Produto.Details
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1>Detalhes do Produto</h1>
+
+<div>
+    <p><strong>Nome:</strong>@Model.ProdModel.Nome</p>
+    <p><strong>Descrição:</strong>@Model.ProdModel.Descricao</p>
+    <p><strong>Preço:</strong>@Model.ProdModel.Preco</p>
+    <p><strong>Categoria:</strong>@Model.ProdModel.Categoria!.Nome</p>
+</div>
+
+<a class="btn btn-primary" asp-page="/Produto/Index">Voltar para a lista</a>
+</body>

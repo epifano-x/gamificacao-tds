@@ -1,0 +1,43 @@
+@page
+@model GerenRest.RazorPages.Pages.Garcon.Index
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1 class="display-4">Garçons Registrados</h1>
+
+<hr/>
+<td><a class="btn btn-success" asp-page="./Create">Cadastrar novo Garçon</a></td>
+<hr/>
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>Numero Identificação</td>
+                <td>Nome Completo</td>
+                <td>Contato</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var garconModel in Model.GarconModel)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => garconModel.NumIdentificao)</td>
+                    <td>@Html.DisplayFor(model => garconModel.Nome) @Html.DisplayFor(model => garconModel.Sobrenome)</td>
+                    <td>@Html.DisplayFor(model => garconModel.Telefone)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@garconModel.GarconID">Alterar</a>
+                        <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@garconModel.GarconID">Visualizar</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@garconModel.GarconID">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>

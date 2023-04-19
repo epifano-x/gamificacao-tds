@@ -1,0 +1,68 @@
+@page
+@model GerenRest.RazorPages.Pages.Atendimento.Create
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1>Registrar Atendimento</h1>
+
+@if (!string.IsNullOrEmpty(TempData["ErroSelecaoProd"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroSelecaoProd"]</div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <div class="form-group">
+                <label asp-for="GarconId">Garçon Resonsável</label>
+                <select asp-for="GarconId">
+                    @foreach (var garModel in Model.GarconModel!)
+                    {
+                        <option value="@garModel.GarconID">@garModel.Nome</option>
+                    }
+                </select>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="MesaId">Mesa Atendida</label>
+                <select asp-for="MesaId">
+                    @foreach (var mesaModel in Model.MesaModel!)
+                    {
+                        @if(@mesaModel.Ocupada == "Ocupada") {
+                            <option value="@mesaModel.MesaID">@mesaModel.Numero</option>
+                        }
+                    }
+                </select>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label>Produtos Consumidos</label>
+                <ul>
+                    @foreach (var prodModel in Model.ProdModel!)
+                    {
+                        <li>
+                            <input type="checkbox" name="ProdSelec" value="@prodModel.ProdutoID"/>
+                            <label>@prodModel.Nome</label>
+                        </li>
+                        <div class="form-group">
+                            <label asp-for="AtenModel.quantidade">Numero</label>
+                            <input asp-for="AtenModel.quantidade" class="form-control">
+                            <span asp-validation-for="AtenModel.quantidade" class="text-dange"></span>
+                        </div>
+                    }
+                </ul>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Produto/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

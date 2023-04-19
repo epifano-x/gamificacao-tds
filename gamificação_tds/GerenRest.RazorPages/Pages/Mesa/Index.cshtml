@@ -1,0 +1,59 @@
+@page
+@model GerenRest.RazorPages.Pages.Mesa.Index
+<head>
+  <style>
+    .row {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1 class="display-4">Mesas Registradas</h1>
+
+<hr/>
+<td><a class="btn btn-success" asp-page="./Create">Cadastrar nova Mesa</a></td>
+<hr/>
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>Numero da Mesa</td>
+                <td>Status Mesa</td>
+                <td>Hora Abertura</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mesaModel in Model.MesaModel)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => mesaModel.Numero)</td>
+                    <td>
+                        <div class="row" max-width: 80%; >
+                            <div class="col-md-6">
+                                <div>@Html.DisplayFor(model => mesaModel.Ocupada)</div>
+                            </div>
+                            @if(mesaModel.Ocupada == "Ocupada") {
+                                <div class="col-md-6">
+                                    <div><a class="btn btn-danger" asp-page="./Edit" asp-route-id="@mesaModel.MesaID">Fechar</a></div>
+                                </div>
+                            }
+                        </div>
+                    </td>
+                    <td>@Html.DisplayFor(model => mesaModel.HoraAbertura)</td>
+                    <td>
+                        <a asp-page="./Comanda" class="btn btn-success" asp-route-id="@mesaModel.MesaID">Comanda</a>
+                        <a asp-page="./Details" class="btn btn-primary" asp-route-id="@mesaModel.MesaID">Visualizar</a>
+                        <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@mesaModel.MesaID">Remover</a>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>

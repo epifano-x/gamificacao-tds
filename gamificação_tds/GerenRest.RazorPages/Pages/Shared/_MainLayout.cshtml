@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .table-hover-custom tbody tr:hover {
+                background-color: #ffffff;
+            }
+        </style>
+        <title>Gerencia do Restaurante</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <partial name="./_MainMenuPartialPage.cshtml">
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer class="bg-primary text-white py-3"></footer>
+    </body>
+</html>

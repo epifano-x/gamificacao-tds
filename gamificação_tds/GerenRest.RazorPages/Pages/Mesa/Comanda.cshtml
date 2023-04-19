@@ -1,0 +1,44 @@
+@page
+@model GerenRest.RazorPages.Pages.Mesa.Comanda
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1>Cadastrar novo Cliente</h1>
+
+@if (!string.IsNullOrEmpty(TempData["ErroMesa"]?.ToString())) {
+    <div class="alert alert-warning">@TempData["ErroMesa"]</div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <div class="form-group">
+                <label asp-for="ClienteModel.Nome">Nome</label>
+                <input asp-for="ClienteModel.Nome" class="form-control">
+                <span asp-validation-for="ClienteModel.Nome" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteModel.Sobrenome">Sobrenome</label>
+                <input asp-for="ClienteModel.Sobrenome" class="form-control">
+                <span asp-validation-for="ClienteModel.Sobrenome" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteModel.Telefone">Telefone para contato</label>
+                <input asp-for="ClienteModel.Telefone" class="form-control" placeholder="(45)988123456">
+                <span asp-validation-for="ClienteModel.Telefone" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar"/>
+                <a asp-page="/Mesa/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

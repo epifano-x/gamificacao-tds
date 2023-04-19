@@ -1,0 +1,22 @@
+@page "{id:int}"
+@model GerenRest.RazorPages.Pages.Atendimento.Details
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1>Detalhes do Atendimento</h1>
+
+<div>
+    <p><strong>Numero da mesa:</strong> @Model.AtenModel.MesaAtendida!.Numero</p>
+    <p><strong>Garçon Responsável:</strong> @Model.AtenModel.GarconResponsavel!.Nome</p>
+    <p><strong>Horario Atendimento:</strong> @Model.AtenModel.HorarioAtendimento</p>
+    <p><strong>Quantidade:</strong> @Model.AtenModel.quantidade</p>
+    <p><strong>Preço Total:</strong> @Model.AtenModel.PrecoTotal</p>
+</div>
+
+<a class="btn btn-primary" asp-page="/Atendimento/Index">Voltar para a lista</a>
+</body>

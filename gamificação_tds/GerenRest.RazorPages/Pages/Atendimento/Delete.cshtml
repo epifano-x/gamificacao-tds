@@ -1,0 +1,26 @@
+@page "{id:int}"
+@model GerenRest.RazorPages.Pages.Atendimento.Delete
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <div>
+    <h1>Detalhes do atendimento a ser deletado.</h1>
+
+    <p><strong>Numero da mesa:</strong> @Model.AtenModel.MesaAtendida!.Numero</p>
+    <p><strong>Garçon Responsável:</strong> @Model.AtenModel.GarconResponsavel!.Nome</p>
+    <p><strong>Horario Atendimento:</strong> @Model.AtenModel.HorarioAtendimento</p>
+    <p><strong>Preço Total:</strong> @Model.AtenModel.PrecoTotal</p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Deletar" class="btn btn-danger"/>
+        <a asp-page="./Atendimento/Index" class="btn btn-primary">Retornar para a listagem</a>
+    </div>
+</form>
+</body>

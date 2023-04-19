@@ -1,0 +1,43 @@
+@page
+@model GerenRest.RazorPages.Pages.Categoria.Index
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <h1 class="display-4">Categoria Registradas</h1>
+
+<hr/>
+<td><a class="btn btn-success" asp-page="./Create">Criar nova categoria</a></td>
+<hr/>
+
+<div>
+    <table class="table table-bordered table-striped table-hover-custom">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].CategoriaID)</td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].Nome)</td>
+                <td>@Html.DisplayNameFor(model => model.CategoriaList[0].Descricao)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var catModel in Model.CategoriaList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => catModel.CategoriaID)</td>
+                    <td>@Html.DisplayFor(model => catModel.Nome)</td>
+                    <td>@Html.DisplayFor(model => catModel.Descricao)</td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@catModel.CategoriaID">Alterar</a>
+                        <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@catModel.CategoriaID">Visualizar</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@catModel.CategoriaID">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>

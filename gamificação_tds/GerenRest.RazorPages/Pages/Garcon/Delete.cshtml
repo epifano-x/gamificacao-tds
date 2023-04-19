@@ -1,0 +1,25 @@
+@page "{id:int}"
+@model GerenRest.RazorPages.Pages.Garcon.Delete
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <div>
+    <h1>Detalhes do garçon a ser removido</h1>
+
+    <p><strong>Nome:</strong>@Model.GarconModel.Nome @Model.GarconModel.Sobrenome</p>
+    <p><strong>Numero Identificação:</strong>@Model.GarconModel.NumIdentificao</p>
+    <p><strong>Telefone:</strong>@Model.GarconModel.Telefone</p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Deletar" class="btn btn-danger"/>
+        <a asp-page="./Garcon/Index" class="btn btn-primary">Retornar para a listagem</a>
+    </div>
+</form>
+</body>

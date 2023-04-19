@@ -1,0 +1,22 @@
+@page "{id:int}"
+@model GerenRest.RazorPages.Pages.Mesa.Details
+
+<h1>Detalhes da mesa</h1>
+<head>
+  <style>
+		body {
+			background-color: #7779b872; /* Substitua pelo código hexadecimal da cor que você deseja usar */
+		}
+  </style>
+</head>
+<body>
+    <div>
+    <p><strong>Numero da mesa:</strong>@Model.MesaModel.Numero</p>
+    <p><strong>Status da mesa:</strong>@Model.MesaModel.Ocupada</p>
+    <p><strong>Hora da Abertura:</strong>@Model.MesaModel.HoraAbertura</p>
+    <p><strong>Cliente:</strong>@Model..HoraAbertura</p>
+</div>
+
+<a class="btn btn-primary" asp-page="/Mesa/Index">Voltar para a lista</a>
+</body>
+
