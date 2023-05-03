@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4duqvjP6G726QfxXi1nac82GIMyT2qtoSrKKxZCLSM8sgHne4bq1hS5cfLLjlh1MNQuAE0bovMpG0P9paPOuDA==",
+  "dgSpecHash": "1B4wCELUtqSODhUd3Kg4of7Xperfx6riLXHU3b5eNX6nbyrEHhhUBMEIHDcu9aT0mT8T5PwJNkN9jt2s1ctLXg==",
   "success": true,
-  "projectFilePath": "D:\\gamificação_tds\\GerenRest.RazorPages\\GerenRest.RazorPages.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\Documents\\GitHub\\gamificacao-tds\\gamificação_tds\\GerenRest.RazorPages\\GerenRest.RazorPages.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.4\\microsoft.data.sqlite.core.7.0.4.nupkg.sha512",

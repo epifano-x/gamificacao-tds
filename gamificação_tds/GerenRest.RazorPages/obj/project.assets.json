@@ -1265,24 +1265,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruno\\.nuget\\packages\\": {}
+    "C:\\Users\\bruno\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\gamificação_tds\\GerenRest.RazorPages\\GerenRest.RazorPages.csproj",
+      "projectUniqueName": "C:\\Users\\bruno\\Documents\\GitHub\\gamificacao-tds\\gamificação_tds\\GerenRest.RazorPages\\GerenRest.RazorPages.csproj",
       "projectName": "GerenRest.RazorPages",
-      "projectPath": "d:\\gamificação_tds\\GerenRest.RazorPages\\GerenRest.RazorPages.csproj",
+      "projectPath": "C:\\Users\\bruno\\Documents\\GitHub\\gamificacao-tds\\gamificação_tds\\GerenRest.RazorPages\\GerenRest.RazorPages.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "d:\\gamificação_tds\\GerenRest.RazorPages\\obj\\",
+      "outputPath": "C:\\Users\\bruno\\Documents\\GitHub\\gamificacao-tds\\gamificação_tds\\GerenRest.RazorPages\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
