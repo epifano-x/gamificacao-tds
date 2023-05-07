@@ -1,4 +1,4 @@
-#Gamificacao-tds
+# Gamificação-TDS
 
 Projeto realizado para materia de tds - gerenciador de restaurante. 
 
