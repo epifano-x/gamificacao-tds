@@ -16,7 +16,7 @@ O objetivo deste projeto é desenvolver um sistema de gerenciamento de pedidos d
 
 - Clone o repositório ou faça o download do ZIP;
 - Abra a solução ProjetoGerenciamentoRestaurante.sln no Visual Studio;
-- Execute a aplicação utilizando o comando "dotnet watch run" ou "dotnet run"
+- Execute a aplicação utilizando o comando "dotnet watch run" ou "dotnet run" e acesse http://localhost:5141/
 
 # Tecnologias utilizadas
 
